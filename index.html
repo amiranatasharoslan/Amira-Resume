@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amira Natasha Binti Roslan — IT Application Analyst & Full-Stack Developer</title>
+<meta name="description" content="CV of Amira Natasha Binti Roslan, IT Application Analyst, Full-Stack Developer and Systems Analyst based in Kuala Lumpur, Malaysia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink: #14202B;
+    --paper: #F5F3EE;
+    --paper-raised: #FFFFFF;
+    --teal: #3D7A8A;
+    --teal-deep: #2A5866;
+    --gold: #B8902E;
+    --slate: #4A5568;
+    --line: #D8D3C7;
+    --radius: 3px;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin:0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a{ color: inherit; }
+  ::selection{ background: var(--gold); color: var(--paper); }
+
+  h1, h2, h3{
+    font-family: 'Space Grotesk', sans-serif;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  .mono{ font-family: 'IBM Plex Mono', monospace; }
+
+  .wrap{
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  .skip-link{
+    position:absolute; left:-9999px; top:0;
+    background: var(--ink); color: var(--paper); padding: 10px 16px;
+    z-index: 100; border-radius: var(--radius);
+  }
+  .skip-link:focus{ left: 16px; top: 16px; }
+  a:focus-visible, button:focus-visible{ outline: 2px solid var(--teal); outline-offset: 3px; }
+
+  /* ---------- Header ---------- */
+  header{
+    position: sticky; top: 0; z-index: 20;
+    background: rgba(245,243,238,0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav.wrap{ display:flex; align-items:center; justify-content: space-between; height: 64px; }
+  .nav-mark{ font-family:'IBM Plex Mono', monospace; font-weight:500; font-size: 14px; color: var(--teal-deep); }
+  .nav-links{ display:flex; gap: 24px; list-style:none; margin:0; padding:0; font-size: 14px; }
+  .nav-links a{ text-decoration:none; color: var(--slate); padding: 4px 2px; border-bottom: 1px solid transparent; transition: border-color 0.2s, color 0.2s; }
+  .nav-links a:hover{ color: var(--ink); border-bottom-color: var(--gold); }
+
+  /* ---------- Hero ---------- */
+  .hero{ padding: 88px 0 64px; position: relative; border-top:none; }
+  .hero-inner{ display:flex; align-items:center; gap: 40px; }
+  .avatar{
+    width: 112px; height: 112px; border-radius: 50%;
+    object-fit: cover; border: 2px solid var(--line);
+    flex-shrink: 0;
+  }
+  .terminal{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px; color: var(--teal-deep);
+    margin-bottom: 20px; min-height: 20px;
+  }
+  .terminal .cursor{ display:inline-block; width: 8px; background: var(--gold); animation: blink 1s steps(1) infinite; margin-left: 2px; }
+  @keyframes blink{ 50%{ opacity: 0; } }
+
+  .hero h1{ font-size: clamp(30px, 5vw, 44px); font-weight: 700; color: var(--ink); }
+  .hero .role{ font-family:'Space Grotesk', sans-serif; font-size: clamp(15px, 2vw, 18px); color: var(--teal-deep); font-weight: 500; margin-top: 8px; }
+  .hero-meta{ display:flex; flex-wrap:wrap; gap: 16px 24px; margin-top: 16px; font-size: 14px; color: var(--slate); }
+  .hero-meta a{ text-decoration:none; }
+  .hero-meta a:hover{ color: var(--teal-deep); }
+  .hero-meta span{ display:inline-flex; align-items:center; gap:6px; }
+
+  .hero-actions{ display:flex; gap: 14px; margin-top: 28px; flex-wrap: wrap; }
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding: 12px 20px; border-radius: var(--radius); text-decoration:none;
+    font-size: 14px; font-weight: 500; font-family: 'Inter', sans-serif;
+    border: 1px solid var(--ink);
+    transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease;
+  }
+  .btn-primary{ background: var(--ink); color: var(--paper); }
+  .btn-primary:hover{ background: var(--teal-deep); border-color: var(--teal-deep); transform: translateY(-1px); }
+  .btn-ghost{ background: transparent; color: var(--ink); }
+  .btn-ghost:hover{ background: var(--ink); color: var(--paper); transform: translateY(-1px); }
+
+  /* ---------- Sections ---------- */
+  section{ padding: 60px 0; border-top: 1px solid var(--line); }
+  .section-head{ display:flex; align-items: baseline; gap: 14px; margin-bottom: 32px; }
+  .section-head .key{ font-family:'IBM Plex Mono', monospace; font-size: 12px; color: var(--gold); letter-spacing: 0.04em; }
+  .section-head h2{ font-size: 24px; font-weight: 600; }
+
+  .about p{ color: var(--slate); max-width: 680px; font-size: 16px; }
+
+  /* ---------- Skills ---------- */
+  .skills-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  .skill-group-title{ font-family:'IBM Plex Mono', monospace; font-size: 12px; color: var(--teal-deep); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 16px; }
+  .skill-row{ margin-bottom: 14px; }
+  .skill-row .skill-labels{ display:flex; justify-content: space-between; font-size: 13.5px; margin-bottom: 6px; }
+  .skill-row .skill-labels .pct{ font-family:'IBM Plex Mono', monospace; color: var(--slate); font-size: 12px; }
+  .bar-track{ height: 6px; background: var(--line); border-radius: 4px; overflow: hidden; }
+  .bar-fill{ height:100%; background: linear-gradient(90deg, var(--teal-deep), var(--teal)); border-radius: 4px; }
+
+  .tag-row{ display:flex; flex-wrap:wrap; gap: 8px; margin-top: 8px; }
+  .tag{ font-size: 13px; padding: 5px 10px; border: 1px solid var(--line); border-radius: var(--radius); color: var(--ink); background: var(--paper-raised); }
+
+  /* ---------- Experience ---------- */
+  .job{ display:grid; grid-template-columns: 150px 1fr; gap: 24px; padding: 26px 0; border-top: 1px solid var(--line); }
+  .job:first-child{ border-top:none; padding-top:0; }
+  .job-date{ font-family:'IBM Plex Mono', monospace; font-size: 12.5px; color: var(--slate); padding-top: 3px; }
+  .job-title{ font-size: 16.5px; font-weight: 600; }
+  .job-org{ color: var(--teal-deep); font-size: 14px; margin-top: 2px; font-weight:500; }
+  .job ul{ margin: 12px 0 0; padding-left: 18px; color: var(--slate); font-size: 14.5px; }
+  .job li + li{ margin-top: 7px; }
+
+  /* ---------- Education ---------- */
+  .edu-item{ padding: 22px 0; border-top: 1px solid var(--line); }
+  .edu-item:first-child{ border-top:none; padding-top:0; }
+  .edu-top{ display:flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  .edu-title{ font-size: 16px; font-weight:600; }
+  .edu-date{ font-family:'IBM Plex Mono', monospace; font-size: 12.5px; color: var(--slate); }
+  .edu-org{ color: var(--teal-deep); font-size: 14px; margin-top: 2px; font-weight: 500; }
+  .edu-item p{ margin: 8px 0 0; color: var(--slate); font-size: 14.5px; }
+
+  /* ---------- Projects ---------- */
+  .project-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .project-card{ border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; background: var(--paper-raised); }
+  .project-card h3{ font-size: 16px; margin-bottom: 10px; }
+  .project-card p{ color: var(--slate); font-size: 14px; margin:0; }
+
+  /* ---------- Achievements ---------- */
+  .achieve-row{ display:grid; grid-template-columns: 1fr 70px; gap: 16px; padding: 18px 0; border-top: 1px solid var(--line); align-items:baseline; }
+  .achieve-row:first-child{ border-top: none; padding-top: 0; }
+  .achieve-title{ font-weight: 600; font-size: 15px; }
+  .achieve-desc{ color: var(--slate); font-size: 14px; margin-top: 4px; }
+  .achieve-year{ font-family:'IBM Plex Mono', monospace; font-size: 13px; color: var(--gold); text-align:right; }
+
+  /* ---------- Contact ---------- */
+  .contact-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .contact-item{ border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; background: var(--paper-raised); }
+  .contact-item .label{ font-family:'IBM Plex Mono', monospace; font-size: 11px; color: var(--slate); text-transform: uppercase; letter-spacing: 0.05em; }
+  .contact-item .value{ margin-top: 8px; font-size: 14.5px; font-weight: 500; word-break: break-word; }
+  .contact-item a{ text-decoration:none; }
+  .contact-item a:hover{ color: var(--teal-deep); }
+
+  footer{ padding: 32px 0 48px; text-align:center; font-size: 13px; color: var(--slate); }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+    .cursor{ animation: none; opacity: 1; }
+  }
+
+  @media (max-width: 720px){
+    .nav-links{ display:none; }
+    .hero-inner{ flex-direction: column; align-items: flex-start; }
+    .job{ grid-template-columns: 1fr; gap: 6px; }
+    .skills-grid{ grid-template-columns: 1fr; gap: 28px; }
+    .project-grid{ grid-template-columns: 1fr; }
+    .contact-grid{ grid-template-columns: 1fr; }
+    .achieve-row{ grid-template-columns: 1fr; }
+    .achieve-year{ text-align:left; }
+    .edu-top{ flex-direction: column; }
+    .hero{ padding: 64px 0 48px; }
+  }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header>
+  <nav class="wrap" aria-label="Primary">
+    <span class="nav-mark">amiranatasha.dev</span>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-inner">
+        <img src="./assets/amira.png" alt="Portrait of Amira Natasha Binti Roslan" class="avatar">
+        <div>
+          <p class="terminal" id="terminalLine">&nbsp;</p>
+          <h1>Amira Natasha Binti Roslan</h1>
+          <p class="role">IT Application Analyst · Full-Stack Developer · Systems Analyst</p>
+          <div class="hero-meta">
+            <span>📍 Taman Koperasi Polis Fasa 2, Kuala Lumpur</span>
+            <span>📞 <a href="tel:+60182250331">+6018-2250331</a></span>
+            <span>✉️ <a href="mailto:amiranatasha.roslan@gmail.com">amiranatasha.roslan@gmail.com</a></span>
+          </div>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Get in touch</a>
+            <a class="btn btn-ghost" href="https://linkedin.com/in/amiranatasharoslan" target="_blank" rel="noopener">LinkedIn profile</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="wrap">
+      <div class="section-head"><span class="key">01</span><h2>About</h2></div>
+      <p>
+        IT professional with 3+ years of progressive experience spanning full-stack web development,
+        system analysis, and application support across government and private sectors. I specialise
+        in architecting and enhancing enterprise systems — from a ColdFusion-based financial
+        management platform at FRIM to PHP/Python multi-tenant applications — while delivering
+        measurable gains in operational efficiency. I'm skilled at bridging technical and business
+        stakeholders to translate complex requirements into reliable, maintainable solutions.
+        I hold a Bachelor of Information Technology (Hons) from Universiti Kebangsaan Malaysia.
+      </p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <div class="section-head"><span class="key">02</span><h2>Skills</h2></div>
+      <div class="skills-grid">
+        <div>
+          <div class="skill-group-title">Technical</div>
+
+          <div class="skill-row">
+            <div class="skill-labels"><span>PHP, HTML, CSS</span><span class="pct">95%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:95%"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-labels"><span>Office Suite</span><span class="pct">95%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:95%"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-labels"><span>MySQL, JavaScript</span><span class="pct">90%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:90%"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-labels"><span>AWS Cloud</span><span class="pct">80%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:80%"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-labels"><span>Adobe Illustrator</span><span class="pct">80%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:80%"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-labels"><span>Magento / LightSail</span><span class="pct">80%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:80%"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-labels"><span>Adobe Photoshop</span><span class="pct">75%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:75%"></div></div>
+          </div>
+
+          <div class="tag-row">
+            <span class="tag">ColdFusion</span>
+            <span class="tag">SQL Server</span>
+            <span class="tag">Python</span>
+            <span class="tag">Bootstrap 5</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="skill-group-title">Soft skills</div>
+          <div class="skill-row">
+            <div class="skill-labels"><span>Application support</span><span class="pct">95%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:95%"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-labels"><span>Cross-team collaboration</span><span class="pct">95%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:95%"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-labels"><span>Process handling</span><span class="pct">90%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:90%"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-labels"><span>Issue resolution</span><span class="pct">90%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:90%"></div></div>
+          </div>
+
+          <div class="skill-group-title" style="margin-top:28px;">Languages</div>
+          <div class="tag-row">
+            <span class="tag">English</span>
+            <span class="tag">Bahasa Melayu</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <div class="section-head"><span class="key">03</span><h2>Experience</h2></div>
+      <div class="timeline">
+
+        <div class="job">
+          <div class="job-date">Apr 2026 – Present</div>
+          <div>
+            <div class="job-title">Penolong Teknologi Maklumat (IT Officer)</div>
+            <div class="job-org">Forest Research Institute Malaysia (FRIM)</div>
+            <ul>
+              <li>Worked closely with finance stakeholders and fellow developers to architect and enhance an internal financial management system, supporting end-to-end financial workflows across multiple finance units.</li>
+              <li>Engineered security hardening measures including CSRF token validation, XSS prevention, parameterised queries, role-based access control, and session security, reducing vulnerability exposure across 6+ modules.</li>
+              <li>Migrated system datasource architecture from a single connection to three dedicated, purpose-specific sources, improving query isolation and maintainability.</li>
+              <li>Collaborated with finance officers to map legacy workflows, ensuring accurate business logic re-implementation and zero data loss during module redevelopment.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="job">
+          <div class="job-date">Aug 2024 – Mar 2026</div>
+          <div>
+            <div class="job-title">IT Application Analyst</div>
+            <div class="job-org">Segi Value Holdings Sdn Bhd</div>
+            <ul>
+              <li>Developed, maintained, and troubleshot enterprise software using PHP, Bootstrap, SQL, Python, and JavaScript, reducing recurring defect rate by streamlining debugging and documentation practices.</li>
+              <li>Delivered system enhancements and upgrade packages that boosted application efficiency, meeting SLA requirements across business units.</li>
+              <li>Partnered with business analysts to analyse, redesign, and document software applications, ensuring alignment with evolving company requirements.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="job">
+          <div class="job-date">Apr 2024 – Jul 2024</div>
+          <div>
+            <div class="job-title">Assistant Admin</div>
+            <div class="job-org">Qube Integrated Malaysia Sdn Bhd</div>
+            <ul>
+              <li>Managed 500+ data entries and 200+ files; coordinated scheduling for a team of 10, maintaining 100% supply and correspondence continuity.</li>
+              <li>Compiled, formatted, and proofread 50+ tender documents, ensuring regulatory compliance and on-time submission across all deadlines.</li>
+              <li>Liaised with 4+ internal departments and 10+ external parties to consolidate approvals and gather project-critical information.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="job">
+          <div class="job-date">Aug 2023 – Apr 2024</div>
+          <div>
+            <div class="job-title">Protégé</div>
+            <div class="job-org">Hospital Angkatan Tentera Tuanku Mizan</div>
+            <ul>
+              <li>Architected a medication inventory monitoring system (HTML, PHP, MySQL, CSS, JS) that improved tracking accuracy and cut operational overhead by 50%, exceeding benchmark targets.</li>
+              <li>Led development of a pharmacy store management system, streamlining dispensary workflows and reducing turnaround time by 30%.</li>
+              <li>Analysed data from 50+ sources to surface actionable insights, contributing to a 20% uplift in clinical decision-making speed.</li>
+              <li>Increased team productivity by 25% through process documentation, data quality controls, and enhanced administrative workflows.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="job">
+          <div class="job-date">Mar 2023 – Jul 2023</div>
+          <div>
+            <div class="job-title">IT Part-time</div>
+            <div class="job-org">University College MAIWP International (UCMI)</div>
+            <ul>
+              <li>Reconfigured Google Workspace settings across 15 applications, achieving a 20% gain in operational efficiency and 15% boost in team productivity.</li>
+              <li>Oversaw full staff data migration into a new HR application system with 90% accuracy, slashing processing overhead by 40%.</li>
+              <li>Optimised student registration workflows in MySQL Workbench, reducing data entry time by 50% while maintaining data integrity.</li>
+              <li>Collaborated on staff card redesign using Adobe Illustrator, lifting visual quality scores by 40%.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="wrap">
+      <div class="section-head"><span class="key">04</span><h2>Education</h2></div>
+
+      <div class="edu-item">
+        <div class="edu-top">
+          <div class="edu-title">Bachelor of Information Technology (Hons)</div>
+          <div class="edu-date">Oct 2020 – Nov 2023</div>
+        </div>
+        <div class="edu-org">Universiti Kebangsaan Malaysia, Bangi</div>
+        <p>CGPA: 3.72 · Thesis: "Cyber Security Risk Assessment Mobile Application"</p>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-top">
+          <div class="edu-title">Diploma in Digital Technology</div>
+          <div class="edu-date">Jun 2017 – Nov 2019</div>
+        </div>
+        <div class="edu-org">Politeknik Ungku Omar, Ipoh</div>
+        <p>CGPA: 3.76 · Major in Information Security</p>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-top">
+          <div class="edu-title">SPM (Malaysian Certificate of Education)</div>
+          <div class="edu-date">Jan 2011 – Dec 2016</div>
+        </div>
+        <div class="edu-org">SMK Batu Muda, Kuala Lumpur</div>
+        <p>Distinction in English Language, Science, Mathematics, Malay Language, History, and Fundamentals of Economics.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-head"><span class="key">05</span><h2>Projects</h2></div>
+      <div class="project-grid">
+        <div class="project-card">
+          <h3>Cyber Risk Calculator</h3>
+          <p>An app that improved cyber risk evaluation for 20+ users, built from a final-year thesis on mobile risk assessment.</p>
+        </div>
+        <div class="project-card">
+          <h3>Shop Management System</h3>
+          <p>A management system handling 50+ products, built with PHP, HTML, CSS, and JavaScript.</p>
+        </div>
+        <div class="project-card">
+          <h3>E-commerce on Magento</h3>
+          <p>An e-commerce site built with Magento on Amazon LightSail, handling 100+ transactions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="achievements">
+    <div class="wrap">
+      <div class="section-head"><span class="key">06</span><h2>Achievements &amp; Certifications</h2></div>
+
+      <div class="achieve-row">
+        <div>
+          <div class="achieve-title">AWS Certified Cloud Practitioner</div>
+          <div class="achieve-desc">Amazon Web Services</div>
+        </div>
+        <div class="achieve-year">2023</div>
+      </div>
+      <div class="achieve-row">
+        <div>
+          <div class="achieve-title">Professional Certificate in Cyber Security Protection</div>
+          <div class="achieve-desc">Universiti Kebangsaan Malaysia</div>
+        </div>
+        <div class="achieve-year">2021</div>
+      </div>
+      <div class="achieve-row">
+        <div>
+          <div class="achieve-title">Gold Medal &amp; 3rd Place, Best Project Overall</div>
+          <div class="achieve-desc">Mini Technology &amp; Creative Discovery Competition, Politeknik Ungku Omar</div>
+        </div>
+        <div class="achieve-year">2019</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="section-head"><span class="key">07</span><h2>Contact</h2></div>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <div class="label">Email</div>
+          <div class="value"><a href="mailto:amiranatasha.roslan@gmail.com">amiranatasha.roslan@gmail.com</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="label">Phone</div>
+          <div class="value"><a href="tel:+60182250331">+6018-2250331</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="label">LinkedIn</div>
+          <div class="value"><a href="https://linkedin.com/in/amiranatasharoslan" target="_blank" rel="noopener">linkedin.com/in/amiranatasharoslan</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">Kuala Lumpur, Malaysia · Open to opportunities</div>
+</footer>
+
+<script>
+  (function(){
+    var el = document.getElementById('terminalLine');
+    var text = '~/amiranatasha % whoami';
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduced) { el.textContent = text; return; }
+    var i = 0;
+    function type(){
+      if (i <= text.length){
+        el.innerHTML = text.slice(0, i) + '<span class="cursor">&nbsp;</span>';
+        i++;
+        setTimeout(type, 38);
+      } else {
+        el.innerHTML = text + '<span class="cursor">&nbsp;</span>';
+      }
+    }
+    type();
+  })();
+</script>
+
+</body>
+</html>
